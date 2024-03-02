@@ -342,7 +342,8 @@ app.get('/api/standings/:raceId/constructors', async (req, res) => {
     res.send(data);
 });
 
-//listens to port, identifies it as port 8080
+//listens to port, identifies it as port 3000
+//originally having problems, saw a bit about port 3000 having some compatibility with this socket instead of the old one 
 app.listen(3000, () => { 
     console.log('listening on port 3000'); 
 }); 
