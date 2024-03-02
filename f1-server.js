@@ -343,6 +343,6 @@ app.get('/api/standings/:raceId/constructors', async (req, res) => {
 });
 
 //listens to port, identifies it as port 8080
-app.listen(8080, () => { 
-    console.log('listening on port 8080'); 
+app.listen(3000, () => { 
+    console.log('listening on port 3000'); 
 }); 

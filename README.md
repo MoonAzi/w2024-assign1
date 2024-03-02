@@ -5,6 +5,8 @@
 
 https://radial-kindly-efraasia.glitch.me/api/seasons </br>
 
+https://malleable-achieved-diadem.glitch.me/api/seasons
+
 https://radial-kindly-efraasia.glitch.me/api/circuits </br>
 
 https://radial-kindly-efraasia.glitch.me/api/circuits/monza </br>
