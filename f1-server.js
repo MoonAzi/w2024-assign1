@@ -1,4 +1,5 @@
 /* Code developed by Muhammad Moonum Azmi for Assignment 1 */ 
+/* Note that all api routes were learned or sourced from within lab 14b or even the assignment documentation with the listed errors, even if not explicitly mentioned*/ 
 //Begin set up for Express as well as supabase 
 const express = require('express'); 
 const supa = require('@supabase/supabase-js'); 
@@ -109,6 +110,7 @@ app.get('/api/drivers/:ref', async (req, res) => {
 }); 
 
 //api route for a driver with a requested name 
+//idea for ilike was acquired from https://supabase.com/docs/reference/javascript/in
 app.get('/api/drivers/search/:substring', async (req, res) => { 
     const {data, error} = await supabase
         .from('drivers')
@@ -190,6 +192,7 @@ app.get('/api/races/season/:year/:round', async (req, res) => {
 });
 
 //api route that returns all races for a given circuit 
+//ascending via true idea was acquired from https://supabase.com/docs/reference/javascript/in, specifically the section 
 app.get('/api/races/circuits/:ref', async (req, res) => { 
     const {data, error} = await supabase
         .from('circuits')
@@ -207,6 +210,7 @@ app.get('/api/races/circuits/:ref', async (req, res) => {
 });
 
 //api route that will return all races for a given circuit between specified years
+// code was inspired by https://stackoverflow.com/questions/77827250/query-a-timestamp-range-in-supabase
 app.get('/api/races/circuits/:ref/season/:start/:end', async (req, res) => { 
     const {data, error} = await supabase
         .from('circuits')
@@ -249,7 +253,8 @@ app.get('/api/results/:raceId', async (req, res) => {
     res.send(data); 
 });
 
-//api route that returns all the results of a requested driver 
+//api route that returns all the results of a requested driver
+//assignment pdf file assisted with an issue here
 app.get('/api/results/driver/:ref', async (req, res) => { 
     const {data, error} = await supabase
         .from('results')
@@ -265,7 +270,8 @@ app.get('/api/results/driver/:ref', async (req, res) => {
     res.send(data); 
 });
 
-//api route that returns a record of the results of a given driver in between a start and end year 
+//api route that returns a record of the results of a given driver in between a start and end year
+//assistance from https://stackoverflow.com/questions/77827250/query-a-timestamp-range-in-supabase
 app.get('/api/results/driver/:ref/seasons/:start/:end', async (req, res) => { 
     const {data, error} = await supabase
         .from('results')
